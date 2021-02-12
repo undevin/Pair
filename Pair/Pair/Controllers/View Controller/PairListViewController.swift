@@ -8,7 +8,7 @@
 import UIKit
 
 class PairListViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,25 +54,23 @@ class PairListViewController: UIViewController {
 // MARK: - Extensions
 extension PairListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PairController.shared.assignedUsers.count > 2 ? 2 : PairController.shared.assignedUsers.count
+        return PairController.shared.sections[section].count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Group 1 "
-        } else if section == 1 {
-            return "Group 2"
-        } else if section == 2 {
-            return "Group 3"
-        } else if section == 3 {
-            return "Group 4"
+        for groupNumber in 0...25 {
+            if section == groupNumber {
+                return "Group \(groupNumber)"
+            } else {
+                return "Group"
+            }
         }
         return "Group"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        let person = PairController.shared.assignedUsers[indexPath.row]
+        let person = PairController.shared.sections[indexPath.section][indexPath.row]
         cell.textLabel?.text = person.name
         
         return cell

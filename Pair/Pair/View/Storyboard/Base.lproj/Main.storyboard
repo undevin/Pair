@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pair List View Controller-->
+        <!--Randomizer-->
         <scene sceneID="3aP-yp-WeZ">
             <objects>
                 <viewController id="E6C-3o-7Tl" customClass="PairListViewController" customModule="Pair" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <constraint firstItem="GFc-NK-7Wv" firstAttribute="top" secondItem="JLK-fI-aIc" secondAttribute="bottom" constant="12" id="yPI-bz-8P1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RII-F5-kNm">
+                    <navigationItem key="navigationItem" title="Randomizer" id="RII-F5-kNm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JQ4-2y-c4J">
                             <connections>
                                 <action selector="addPersonButtonTapped:" destination="E6C-3o-7Tl" id="blK-5P-PhZ"/>

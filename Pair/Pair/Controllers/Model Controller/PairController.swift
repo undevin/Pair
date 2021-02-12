@@ -11,7 +11,7 @@ class PairController {
     
     // MARK: - Properties
     static let shared = PairController()
-    var sections: [[Person]] {[assignedUsers]} 
+    var sections: [[Person]] {[assignedUsers, unassignedUsers]}
     var assignedUsers: [Person] = []
     var unassignedUsers: [Person] = []
     
@@ -39,7 +39,7 @@ class PairController {
     }
     
     func randomizeUsers() {
-        assignedUsers = []
+        assignedUsers.removeAll()
         let shuffledUsers = unassignedUsers.shuffled()
         assignedUsers.append(contentsOf: shuffledUsers)
         print(assignedUsers)

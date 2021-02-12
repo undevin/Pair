@@ -8,7 +8,7 @@
 import CoreData
 
 extension Person {
-    @discardableResult convenience init(name: String, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.context) {
+    @discardableResult convenience init(name: String, uuid: String = UUID().uuidString, isAssigned: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
         self.uuid = uuid

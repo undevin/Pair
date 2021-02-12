@@ -29,9 +29,8 @@ class PairController {
     }
     
     func fetchPeople() {
-        let persons = (try? CoreDataStack.context.fetch(fetchRequest))
-        guard let person = persons else { return }
-        unassignedUsers.append(contentsOf: person)
+        let persons = (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
+        unassignedUsers = persons
     }
     
     func delete(person: Person) {

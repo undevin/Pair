@@ -54,7 +54,20 @@ class PairListViewController: UIViewController {
 // MARK: - Extensions
 extension PairListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PairController.shared.assignedUsers.count
+        return PairController.shared.assignedUsers.count > 2 ? 2 : PairController.shared.assignedUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Group 1 "
+        } else if section == 1 {
+            return "Group 2"
+        } else if section == 2 {
+            return "Group 3"
+        } else if section == 3 {
+            return "Group 4"
+        }
+        return "Group"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

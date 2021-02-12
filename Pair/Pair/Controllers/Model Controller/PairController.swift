@@ -11,7 +11,7 @@ class PairController {
     
     // MARK: - Properties
     static let shared = PairController()
-    var sections: [[Person]] {[assignedUsers]}
+    var sections: [[Person]] {[assignedUsers]} 
     var assignedUsers: [Person] = []
     var unassignedUsers: [Person] = []
     
